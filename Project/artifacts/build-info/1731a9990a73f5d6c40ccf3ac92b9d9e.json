@@ -1,0 +1,537 @@
+{
+	"id": "1731a9990a73f5d6c40ccf3ac92b9d9e",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.7",
+	"solcLongVersion": "0.8.7+commit.e28d00a7",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"Project/TechnoLime.sol": {
+				"content": "\r\n\r\ncontract TechnoLimeStore {\r\n    struct Transaction {\r\n        uint blockNum;\r\n        uint price;\r\n    }\r\n\r\n    mapping(uint => mapping(address => Transaction)) transactions;\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"contracts": {
+			"Project/TechnoLime.sol": {
+				"TechnoLimeStore": {
+					"abi": [],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"Project/TechnoLime.sol\":4:181  contract TechnoLimeStore {\r... */\n  mstore(0x40, 0x80)\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  0x00\n  dup1\n  revert\ntag_1:\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"Project/TechnoLime.sol\":4:181  contract TechnoLimeStore {\r... */\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa26469706673582212204742036617cb4a56871fbbb807ea489082aa19c65225413b39572ee13cd87a2264736f6c63430008070033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212204742036617cb4a56871fbbb807ea489082aa19c65225413b39572ee13cd87a2264736f6c63430008070033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SELFBALANCE TIMESTAMP SUB PUSH7 0x17CB4A56871FBB 0xB8 SMOD 0xEA BASEFEE SWAP1 DUP3 0xAA NOT 0xC6 MSTORE 0x25 COINBASE EXTCODESIZE CODECOPY JUMPI 0x2E 0xE1 EXTCODECOPY 0xD8 PUSH27 0x2264736F6C63430008070033000000000000000000000000000000 ",
+							"sourceMap": "4:177:0:-:0;;;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "6080604052600080fdfea26469706673582212204742036617cb4a56871fbbb807ea489082aa19c65225413b39572ee13cd87a2264736f6c63430008070033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SELFBALANCE TIMESTAMP SUB PUSH7 0x17CB4A56871FBB 0xB8 SMOD 0xEA BASEFEE SWAP1 DUP3 0xAA NOT 0xC6 MSTORE 0x25 COINBASE EXTCODESIZE CODECOPY JUMPI 0x2E 0xE1 EXTCODECOPY 0xD8 PUSH27 0x2264736F6C63430008070033000000000000000000000000000000 ",
+							"sourceMap": "4:177:0:-:0;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "12600",
+								"executionCost": "66",
+								"totalCost": "12666"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "PUSH",
+									"source": 0,
+									"value": "80"
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "PUSH",
+									"source": 0,
+									"value": "40"
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "CALLVALUE",
+									"source": 0
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "ISZERO",
+									"source": 0
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "POP",
+									"source": 0
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 4,
+									"end": 181,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a26469706673582212204742036617cb4a56871fbbb807ea489082aa19c65225413b39572ee13cd87a2264736f6c63430008070033",
+									".code": [
+										{
+											"begin": 4,
+											"end": 181,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 4,
+											"end": 181,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 4,
+											"end": 181,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 4,
+											"end": 181,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 4,
+											"end": 181,
+											"name": "DUP1",
+											"source": 0
+										},
+										{
+											"begin": 4,
+											"end": 181,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							}
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"Project/TechnoLime.sol\":\"TechnoLimeStore\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"Project/TechnoLime.sol\":{\"keccak256\":\"0x05909b2a107df821fa65712848e562fe8e2e0adcd5d39bcee911514515b4aeeb\",\"urls\":[\"bzz-raw://b9eb7e7c1fd8bde0588457fac081ee3e6ad2dfc53e0b16a2d0077c4c55f38df2\",\"dweb:/ipfs/QmZ9X3JfefZSjfK6Fqsb4mh1cqFyjSau8etT4e9H9b4xgb\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [
+							{
+								"astId": 12,
+								"contract": "Project/TechnoLime.sol:TechnoLimeStore",
+								"label": "transactions",
+								"offset": 0,
+								"slot": "0",
+								"type": "t_mapping(t_uint256,t_mapping(t_address,t_struct(Transaction)5_storage))"
+							}
+						],
+						"types": {
+							"t_address": {
+								"encoding": "inplace",
+								"label": "address",
+								"numberOfBytes": "20"
+							},
+							"t_mapping(t_address,t_struct(Transaction)5_storage)": {
+								"encoding": "mapping",
+								"key": "t_address",
+								"label": "mapping(address => struct TechnoLimeStore.Transaction)",
+								"numberOfBytes": "32",
+								"value": "t_struct(Transaction)5_storage"
+							},
+							"t_mapping(t_uint256,t_mapping(t_address,t_struct(Transaction)5_storage))": {
+								"encoding": "mapping",
+								"key": "t_uint256",
+								"label": "mapping(uint256 => mapping(address => struct TechnoLimeStore.Transaction))",
+								"numberOfBytes": "32",
+								"value": "t_mapping(t_address,t_struct(Transaction)5_storage)"
+							},
+							"t_struct(Transaction)5_storage": {
+								"encoding": "inplace",
+								"label": "struct TechnoLimeStore.Transaction",
+								"members": [
+									{
+										"astId": 2,
+										"contract": "Project/TechnoLime.sol:TechnoLimeStore",
+										"label": "blockNum",
+										"offset": 0,
+										"slot": "0",
+										"type": "t_uint256"
+									},
+									{
+										"astId": 4,
+										"contract": "Project/TechnoLime.sol:TechnoLimeStore",
+										"label": "price",
+										"offset": 0,
+										"slot": "1",
+										"type": "t_uint256"
+									}
+								],
+								"numberOfBytes": "64"
+							},
+							"t_uint256": {
+								"encoding": "inplace",
+								"label": "uint256",
+								"numberOfBytes": "32"
+							}
+						}
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"errors": [
+			{
+				"component": "general",
+				"errorCode": "1878",
+				"formattedMessage": "Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> Project/TechnoLime.sol\n\n",
+				"message": "SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.",
+				"severity": "warning",
+				"sourceLocation": {
+					"end": -1,
+					"file": "Project/TechnoLime.sol",
+					"start": -1
+				},
+				"type": "Warning"
+			},
+			{
+				"component": "general",
+				"errorCode": "3420",
+				"formattedMessage": "Warning: Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.7;\"\n--> Project/TechnoLime.sol\n\n",
+				"message": "Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.7;\"",
+				"severity": "warning",
+				"sourceLocation": {
+					"end": -1,
+					"file": "Project/TechnoLime.sol",
+					"start": -1
+				},
+				"type": "Warning"
+			}
+		],
+		"sources": {
+			"Project/TechnoLime.sol": {
+				"ast": {
+					"absolutePath": "Project/TechnoLime.sol",
+					"exportedSymbols": {
+						"TechnoLimeStore": [
+							13
+						]
+					},
+					"id": 14,
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "contract",
+							"fullyImplemented": true,
+							"id": 13,
+							"linearizedBaseContracts": [
+								13
+							],
+							"name": "TechnoLimeStore",
+							"nameLocation": "13:15:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"canonicalName": "TechnoLimeStore.Transaction",
+									"id": 5,
+									"members": [
+										{
+											"constant": false,
+											"id": 2,
+											"mutability": "mutable",
+											"name": "blockNum",
+											"nameLocation": "71:8:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 5,
+											"src": "66:13:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 1,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "66:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 4,
+											"mutability": "mutable",
+											"name": "price",
+											"nameLocation": "95:5:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 5,
+											"src": "90:10:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 3,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "90:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										}
+									],
+									"name": "Transaction",
+									"nameLocation": "43:11:0",
+									"nodeType": "StructDefinition",
+									"scope": 13,
+									"src": "36:72:0",
+									"visibility": "public"
+								},
+								{
+									"constant": false,
+									"id": 12,
+									"mutability": "mutable",
+									"name": "transactions",
+									"nameLocation": "165:12:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 13,
+									"src": "116:61:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Transaction_$5_storage_$_$",
+										"typeString": "mapping(uint256 => mapping(address => struct TechnoLimeStore.Transaction))"
+									},
+									"typeName": {
+										"id": 11,
+										"keyType": {
+											"id": 6,
+											"name": "uint",
+											"nodeType": "ElementaryTypeName",
+											"src": "124:4:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											}
+										},
+										"nodeType": "Mapping",
+										"src": "116:48:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Transaction_$5_storage_$_$",
+											"typeString": "mapping(uint256 => mapping(address => struct TechnoLimeStore.Transaction))"
+										},
+										"valueType": {
+											"id": 10,
+											"keyType": {
+												"id": 7,
+												"name": "address",
+												"nodeType": "ElementaryTypeName",
+												"src": "140:7:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												}
+											},
+											"nodeType": "Mapping",
+											"src": "132:31:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_mapping$_t_address_$_t_struct$_Transaction_$5_storage_$",
+												"typeString": "mapping(address => struct TechnoLimeStore.Transaction)"
+											},
+											"valueType": {
+												"id": 9,
+												"nodeType": "UserDefinedTypeName",
+												"pathNode": {
+													"id": 8,
+													"name": "Transaction",
+													"nodeType": "IdentifierPath",
+													"referencedDeclaration": 5,
+													"src": "151:11:0"
+												},
+												"referencedDeclaration": 5,
+												"src": "151:11:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_struct$_Transaction_$5_storage_ptr",
+													"typeString": "struct TechnoLimeStore.Transaction"
+												}
+											}
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"scope": 14,
+							"src": "4:177:0",
+							"usedErrors": []
+						}
+					],
+					"src": "4:177:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

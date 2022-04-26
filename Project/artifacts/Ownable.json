@@ -1,0 +1,78 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"görli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {
+				"@_93": {
+					"entryPoint": null,
+					"id": 93,
+					"parameterSlots": 0,
+					"returnSlots": 0
+				}
+			},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "6080604052348015600f57600080fd5b50600080339050803b915060008211156054576040517f90ecc18a00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050603f8060a36000396000f3fe6080604052600080fdfea26469706673582212201ce2264b11d2358c58de544aae14e377e5a4a234d12f90106f59df8bb54e721a64736f6c63430008070033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x0 DUP1 CALLER SWAP1 POP DUP1 EXTCODESIZE SWAP2 POP PUSH1 0x0 DUP3 GT ISZERO PUSH1 0x54 JUMPI PUSH1 0x40 MLOAD PUSH32 0x90ECC18A00000000000000000000000000000000000000000000000000000000 DUP2 MSTORE PUSH1 0x4 ADD PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 REVERT JUMPDEST CALLER PUSH1 0x0 DUP1 PUSH2 0x100 EXP DUP2 SLOAD DUP2 PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF MUL NOT AND SWAP1 DUP4 PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF AND MUL OR SWAP1 SSTORE POP POP POP PUSH1 0x3F DUP1 PUSH1 0xA3 PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SHR 0xE2 0x26 0x4B GT 0xD2 CALLDATALOAD DUP13 PC 0xDE SLOAD 0x4A 0xAE EQ 0xE3 PUSH24 0xE5A4A234D12F90106F59DF8BB54E721A64736F6C63430008 SMOD STOP CALLER ",
+			"sourceMap": "96:543:1:-:0;;;227:287;;;;;;;;;;253:9;273:14;290:10;273:27;;340:6;328:19;322:25;;431:1;424:4;:8;420:51;;;454:17;;;;;;;;;;;;;;420:51;490:10;482:5;;:18;;;;;;;;;;;;;;;;;;242:272;;96:543;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "6080604052600080fdfea26469706673582212201ce2264b11d2358c58de544aae14e377e5a4a234d12f90106f59df8bb54e721a64736f6c63430008070033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SHR 0xE2 0x26 0x4B GT 0xD2 CALLDATALOAD DUP13 PC 0xDE SLOAD 0x4A 0xAE EQ 0xE3 PUSH24 0xE5A4A234D12F90106F59DF8BB54E721A64736F6C63430008 SMOD STOP CALLER ",
+			"sourceMap": "96:543:1:-:0;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "12600",
+				"executionCost": "26983",
+				"totalCost": "39583"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"stateMutability": "nonpayable",
+			"type": "constructor"
+		},
+		{
+			"inputs": [],
+			"name": "NotAnEOA",
+			"type": "error"
+		}
+	]
+}

@@ -1,0 +1,1339 @@
+{
+	"id": "e8a1cdc8b59c9ad97e8c3d4dab03dd24",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.7",
+	"solcLongVersion": "0.8.7+commit.e28d00a7",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"Project/Library.sol": {
+				"content": "// SPDX-License-Identifier: UNLICENSED\r\npragma solidity ^0.8.0;\r\n\r\nlibrary Errors {\r\n\r\n    /// Can't add a product that already exists\r\n    error ProductExists();\r\n\r\n    /// Product doesn't exist\r\n    error ProductNotExistent();\r\n\r\n    /// Error trown when the productID doesn't exist or it has been bought once already\r\n    error ItemIdWrongOrBoughtAlready();\r\n\r\n    /// Error trown when money sent is less than Product price\r\n    error LessThanPriceOrOutOfStock();\r\n\r\n    ///Transaction doesn't exist\r\n    error TransactionNotExistent();\r\n\r\n    ///More than 100 blocks have passed since the product has been bought\r\n    error Blocks100Exceeded();\r\n\r\n    /// No products returned or Buyer already refunded\r\n    error NothingToRefund();\r\n}\r\n\r\nlibrary Events {\r\n\r\n    /// Event emmitted when a new product is purchased\r\n    event NewTransaction(uint indexed productId,address indexed buyer,uint amount, uint time);\r\n    event NewReturn(address indexed buyer,uint productId,uint amount, uint time);\r\n\r\n}\r\n\r\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"contracts": {
+			"Project/Library.sol": {
+				"Errors": {
+					"abi": [
+						{
+							"inputs": [],
+							"name": "Blocks100Exceeded",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "ItemIdWrongOrBoughtAlready",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "LessThanPriceOrOutOfStock",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "NothingToRefund",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "ProductExists",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "ProductNotExistent",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "TransactionNotExistent",
+							"type": "error"
+						}
+					],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"Project/Library.sol\":67:739  library Errors {\r... */\n  dataSize(sub_0)\n  dataOffset(sub_0)\n  0x0b\n  dup3\n  dup3\n  dup3\n  codecopy\n  dup1\n  mload\n  0x00\n  byte\n  0x73\n  eq\n  tag_1\n  jumpi\n  mstore(0x00, 0x4e487b7100000000000000000000000000000000000000000000000000000000)\n  mstore(0x04, 0x00)\n  revert(0x00, 0x24)\ntag_1:\n  mstore(0x00, address)\n  0x73\n  dup2\n  mstore8\n  dup3\n  dup2\n  return\nstop\n\nsub_0: assembly {\n        /* \"Project/Library.sol\":67:739  library Errors {\r... */\n      eq(address, deployTimeAddress())\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa2646970667358221220970e5a19870c7e49a87616ba23b98e2a09f50433e058a88553ec4e29c6297ece64736f6c63430008070033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220970e5a19870c7e49a87616ba23b98e2a09f50433e058a88553ec4e29c6297ece64736f6c63430008070033",
+							"opcodes": "PUSH1 0x56 PUSH1 0x50 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH1 0x43 JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH1 0x0 MSTORE PUSH1 0x0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP8 0xE GAS NOT DUP8 0xC PUSH31 0x49A87616BA23B98E2A09F50433E058A88553EC4E29C6297ECE64736F6C6343 STOP ADDMOD SMOD STOP CALLER ",
+							"sourceMap": "67:672:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220970e5a19870c7e49a87616ba23b98e2a09f50433e058a88553ec4e29c6297ece64736f6c63430008070033",
+							"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP8 0xE GAS NOT DUP8 0xC PUSH31 0x49A87616BA23B98E2A09F50433E058A88553EC4E29C6297ECE64736F6C6343 STOP ADDMOD SMOD STOP CALLER ",
+							"sourceMap": "67:672:0:-:0;;;;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "17200",
+								"executionCost": "97",
+								"totalCost": "17297"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "PUSH",
+									"source": 0,
+									"value": "B"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "MLOAD",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "BYTE",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "PUSH",
+									"source": 0,
+									"value": "73"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "EQ",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "PUSH",
+									"source": 0,
+									"value": "4E487B7100000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "PUSH",
+									"source": 0,
+									"value": "4"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "PUSH",
+									"source": 0,
+									"value": "24"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "ADDRESS",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "PUSH",
+									"source": 0,
+									"value": "73"
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "DUP2",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "MSTORE8",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "DUP2",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 739,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a2646970667358221220970e5a19870c7e49a87616ba23b98e2a09f50433e058a88553ec4e29c6297ece64736f6c63430008070033",
+									".code": [
+										{
+											"begin": 67,
+											"end": 739,
+											"name": "PUSHDEPLOYADDRESS",
+											"source": 0
+										},
+										{
+											"begin": 67,
+											"end": 739,
+											"name": "ADDRESS",
+											"source": 0
+										},
+										{
+											"begin": 67,
+											"end": 739,
+											"name": "EQ",
+											"source": 0
+										},
+										{
+											"begin": 67,
+											"end": 739,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 67,
+											"end": 739,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 67,
+											"end": 739,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 67,
+											"end": 739,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 67,
+											"end": 739,
+											"name": "DUP1",
+											"source": 0
+										},
+										{
+											"begin": 67,
+											"end": 739,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							}
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"Blocks100Exceeded\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ItemIdWrongOrBoughtAlready\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LessThanPriceOrOutOfStock\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NothingToRefund\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ProductExists\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ProductNotExistent\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TransactionNotExistent\",\"type\":\"error\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"errors\":{\"Blocks100Exceeded()\":[{\"notice\":\"More than 100 blocks have passed since the product has been bought\"}],\"ItemIdWrongOrBoughtAlready()\":[{\"notice\":\"Error trown when the productID doesn't exist or it has been bought once already\"}],\"LessThanPriceOrOutOfStock()\":[{\"notice\":\"Error trown when money sent is less than Product price\"}],\"NothingToRefund()\":[{\"notice\":\"No products returned or Buyer already refunded\"}],\"ProductExists()\":[{\"notice\":\"Can't add a product that already exists\"}],\"ProductNotExistent()\":[{\"notice\":\"Product doesn't exist\"}],\"TransactionNotExistent()\":[{\"notice\":\"Transaction doesn't exist\"}]},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"Project/Library.sol\":\"Errors\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"Project/Library.sol\":{\"keccak256\":\"0xaedbefed5104a5e23b1014b52e77c5187cd2f5ff1865676f8d04f71d29486540\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://ba4d647550f90590d260e3dd67ebfcd7f899b5333270f73a25e5183d1ccb51c0\",\"dweb:/ipfs/QmSTQxp8Dhwvr9Ck2AeFptNFJBNia4GTytYreUCuMp5S77\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"errors": {
+							"Blocks100Exceeded()": [
+								{
+									"notice": "More than 100 blocks have passed since the product has been bought"
+								}
+							],
+							"ItemIdWrongOrBoughtAlready()": [
+								{
+									"notice": "Error trown when the productID doesn't exist or it has been bought once already"
+								}
+							],
+							"LessThanPriceOrOutOfStock()": [
+								{
+									"notice": "Error trown when money sent is less than Product price"
+								}
+							],
+							"NothingToRefund()": [
+								{
+									"notice": "No products returned or Buyer already refunded"
+								}
+							],
+							"ProductExists()": [
+								{
+									"notice": "Can't add a product that already exists"
+								}
+							],
+							"ProductNotExistent()": [
+								{
+									"notice": "Product doesn't exist"
+								}
+							],
+							"TransactionNotExistent()": [
+								{
+									"notice": "Transaction doesn't exist"
+								}
+							]
+						},
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				},
+				"Events": {
+					"abi": [
+						{
+							"anonymous": false,
+							"inputs": [
+								{
+									"indexed": true,
+									"internalType": "address",
+									"name": "buyer",
+									"type": "address"
+								},
+								{
+									"indexed": false,
+									"internalType": "uint256",
+									"name": "productId",
+									"type": "uint256"
+								},
+								{
+									"indexed": false,
+									"internalType": "uint256",
+									"name": "amount",
+									"type": "uint256"
+								},
+								{
+									"indexed": false,
+									"internalType": "uint256",
+									"name": "time",
+									"type": "uint256"
+								}
+							],
+							"name": "NewReturn",
+							"type": "event"
+						},
+						{
+							"anonymous": false,
+							"inputs": [
+								{
+									"indexed": true,
+									"internalType": "uint256",
+									"name": "productId",
+									"type": "uint256"
+								},
+								{
+									"indexed": true,
+									"internalType": "address",
+									"name": "buyer",
+									"type": "address"
+								},
+								{
+									"indexed": false,
+									"internalType": "uint256",
+									"name": "amount",
+									"type": "uint256"
+								},
+								{
+									"indexed": false,
+									"internalType": "uint256",
+									"name": "time",
+									"type": "uint256"
+								}
+							],
+							"name": "NewTransaction",
+							"type": "event"
+						}
+					],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"Project/Library.sol\":743:1001  library Events {\r... */\n  dataSize(sub_0)\n  dataOffset(sub_0)\n  0x0b\n  dup3\n  dup3\n  dup3\n  codecopy\n  dup1\n  mload\n  0x00\n  byte\n  0x73\n  eq\n  tag_1\n  jumpi\n  mstore(0x00, 0x4e487b7100000000000000000000000000000000000000000000000000000000)\n  mstore(0x04, 0x00)\n  revert(0x00, 0x24)\ntag_1:\n  mstore(0x00, address)\n  0x73\n  dup2\n  mstore8\n  dup3\n  dup2\n  return\nstop\n\nsub_0: assembly {\n        /* \"Project/Library.sol\":743:1001  library Events {\r... */\n      eq(address, deployTimeAddress())\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa2646970667358221220c918bbb411142d590d4a8cbfca1a1dd25951e232110681fd05fdcd7518826b5564736f6c63430008070033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220c918bbb411142d590d4a8cbfca1a1dd25951e232110681fd05fdcd7518826b5564736f6c63430008070033",
+							"opcodes": "PUSH1 0x56 PUSH1 0x50 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH1 0x43 JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH1 0x0 MSTORE PUSH1 0x0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xC9 XOR 0xBB 0xB4 GT EQ 0x2D MSIZE 0xD 0x4A DUP13 0xBF 0xCA BYTE SAR 0xD2 MSIZE MLOAD 0xE2 ORIGIN GT MOD DUP2 REVERT SDIV REVERT 0xCD PUSH22 0x18826B5564736F6C6343000807003300000000000000 ",
+							"sourceMap": "743:258:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220c918bbb411142d590d4a8cbfca1a1dd25951e232110681fd05fdcd7518826b5564736f6c63430008070033",
+							"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xC9 XOR 0xBB 0xB4 GT EQ 0x2D MSIZE 0xD 0x4A DUP13 0xBF 0xCA BYTE SAR 0xD2 MSIZE MLOAD 0xE2 ORIGIN GT MOD DUP2 REVERT SDIV REVERT 0xCD PUSH22 0x18826B5564736F6C6343000807003300000000000000 ",
+							"sourceMap": "743:258:0:-:0;;;;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "17200",
+								"executionCost": "97",
+								"totalCost": "17297"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "PUSH",
+									"source": 0,
+									"value": "B"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "MLOAD",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "BYTE",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "PUSH",
+									"source": 0,
+									"value": "73"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "EQ",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "PUSH",
+									"source": 0,
+									"value": "4E487B7100000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "PUSH",
+									"source": 0,
+									"value": "4"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "PUSH",
+									"source": 0,
+									"value": "24"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "ADDRESS",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "PUSH",
+									"source": 0,
+									"value": "73"
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "DUP2",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "MSTORE8",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "DUP2",
+									"source": 0
+								},
+								{
+									"begin": 743,
+									"end": 1001,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a2646970667358221220c918bbb411142d590d4a8cbfca1a1dd25951e232110681fd05fdcd7518826b5564736f6c63430008070033",
+									".code": [
+										{
+											"begin": 743,
+											"end": 1001,
+											"name": "PUSHDEPLOYADDRESS",
+											"source": 0
+										},
+										{
+											"begin": 743,
+											"end": 1001,
+											"name": "ADDRESS",
+											"source": 0
+										},
+										{
+											"begin": 743,
+											"end": 1001,
+											"name": "EQ",
+											"source": 0
+										},
+										{
+											"begin": 743,
+											"end": 1001,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 743,
+											"end": 1001,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 743,
+											"end": 1001,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 743,
+											"end": 1001,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 743,
+											"end": 1001,
+											"name": "DUP1",
+											"source": 0
+										},
+										{
+											"begin": 743,
+											"end": 1001,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							}
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"buyer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"productId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"}],\"name\":\"NewReturn\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"productId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"buyer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"}],\"name\":\"NewTransaction\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"events\":{\"NewTransaction(uint256,address,uint256,uint256)\":{\"notice\":\"Event emmitted when a new product is purchased\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"Project/Library.sol\":\"Events\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"Project/Library.sol\":{\"keccak256\":\"0xaedbefed5104a5e23b1014b52e77c5187cd2f5ff1865676f8d04f71d29486540\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://ba4d647550f90590d260e3dd67ebfcd7f899b5333270f73a25e5183d1ccb51c0\",\"dweb:/ipfs/QmSTQxp8Dhwvr9Ck2AeFptNFJBNia4GTytYreUCuMp5S77\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"events": {
+							"NewTransaction(uint256,address,uint256,uint256)": {
+								"notice": "Event emmitted when a new product is purchased"
+							}
+						},
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"Project/Library.sol": {
+				"ast": {
+					"absolutePath": "Project/Library.sol",
+					"exportedSymbols": {
+						"Errors": [
+							23
+						],
+						"Events": [
+							45
+						]
+					},
+					"id": 46,
+					"license": "UNLICENSED",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "40:23:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "library",
+							"fullyImplemented": true,
+							"id": 23,
+							"linearizedBaseContracts": [
+								23
+							],
+							"name": "Errors",
+							"nameLocation": "75:6:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"documentation": {
+										"id": 2,
+										"nodeType": "StructuredDocumentation",
+										"src": "91:43:0",
+										"text": "Can't add a product that already exists"
+									},
+									"id": 4,
+									"name": "ProductExists",
+									"nameLocation": "146:13:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 3,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "159:2:0"
+									},
+									"src": "140:22:0"
+								},
+								{
+									"documentation": {
+										"id": 5,
+										"nodeType": "StructuredDocumentation",
+										"src": "170:25:0",
+										"text": "Product doesn't exist"
+									},
+									"id": 7,
+									"name": "ProductNotExistent",
+									"nameLocation": "207:18:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 6,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "225:2:0"
+									},
+									"src": "201:27:0"
+								},
+								{
+									"documentation": {
+										"id": 8,
+										"nodeType": "StructuredDocumentation",
+										"src": "236:83:0",
+										"text": "Error trown when the productID doesn't exist or it has been bought once already"
+									},
+									"id": 10,
+									"name": "ItemIdWrongOrBoughtAlready",
+									"nameLocation": "331:26:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 9,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "357:2:0"
+									},
+									"src": "325:35:0"
+								},
+								{
+									"documentation": {
+										"id": 11,
+										"nodeType": "StructuredDocumentation",
+										"src": "368:58:0",
+										"text": "Error trown when money sent is less than Product price"
+									},
+									"id": 13,
+									"name": "LessThanPriceOrOutOfStock",
+									"nameLocation": "438:25:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 12,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "463:2:0"
+									},
+									"src": "432:34:0"
+								},
+								{
+									"documentation": {
+										"id": 14,
+										"nodeType": "StructuredDocumentation",
+										"src": "474:28:0",
+										"text": "Transaction doesn't exist"
+									},
+									"id": 16,
+									"name": "TransactionNotExistent",
+									"nameLocation": "514:22:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 15,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "536:2:0"
+									},
+									"src": "508:31:0"
+								},
+								{
+									"documentation": {
+										"id": 17,
+										"nodeType": "StructuredDocumentation",
+										"src": "547:69:0",
+										"text": "More than 100 blocks have passed since the product has been bought"
+									},
+									"id": 19,
+									"name": "Blocks100Exceeded",
+									"nameLocation": "628:17:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 18,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "645:2:0"
+									},
+									"src": "622:26:0"
+								},
+								{
+									"documentation": {
+										"id": 20,
+										"nodeType": "StructuredDocumentation",
+										"src": "656:50:0",
+										"text": "No products returned or Buyer already refunded"
+									},
+									"id": 22,
+									"name": "NothingToRefund",
+									"nameLocation": "718:15:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 21,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "733:2:0"
+									},
+									"src": "712:24:0"
+								}
+							],
+							"scope": 46,
+							"src": "67:672:0",
+							"usedErrors": [
+								4,
+								7,
+								10,
+								13,
+								16,
+								19,
+								22
+							]
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "library",
+							"fullyImplemented": true,
+							"id": 45,
+							"linearizedBaseContracts": [
+								45
+							],
+							"name": "Events",
+							"nameLocation": "751:6:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"anonymous": false,
+									"documentation": {
+										"id": 24,
+										"nodeType": "StructuredDocumentation",
+										"src": "767:50:0",
+										"text": "Event emmitted when a new product is purchased"
+									},
+									"id": 34,
+									"name": "NewTransaction",
+									"nameLocation": "829:14:0",
+									"nodeType": "EventDefinition",
+									"parameters": {
+										"id": 33,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 26,
+												"indexed": true,
+												"mutability": "mutable",
+												"name": "productId",
+												"nameLocation": "857:9:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 34,
+												"src": "844:22:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 25,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "844:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 28,
+												"indexed": true,
+												"mutability": "mutable",
+												"name": "buyer",
+												"nameLocation": "883:5:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 34,
+												"src": "867:21:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 27,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "867:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 30,
+												"indexed": false,
+												"mutability": "mutable",
+												"name": "amount",
+												"nameLocation": "894:6:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 34,
+												"src": "889:11:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 29,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "889:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 32,
+												"indexed": false,
+												"mutability": "mutable",
+												"name": "time",
+												"nameLocation": "907:4:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 34,
+												"src": "902:9:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 31,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "902:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "843:69:0"
+									},
+									"src": "823:90:0"
+								},
+								{
+									"anonymous": false,
+									"id": 44,
+									"name": "NewReturn",
+									"nameLocation": "925:9:0",
+									"nodeType": "EventDefinition",
+									"parameters": {
+										"id": 43,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 36,
+												"indexed": true,
+												"mutability": "mutable",
+												"name": "buyer",
+												"nameLocation": "951:5:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 44,
+												"src": "935:21:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 35,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "935:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 38,
+												"indexed": false,
+												"mutability": "mutable",
+												"name": "productId",
+												"nameLocation": "962:9:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 44,
+												"src": "957:14:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 37,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "957:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 40,
+												"indexed": false,
+												"mutability": "mutable",
+												"name": "amount",
+												"nameLocation": "977:6:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 44,
+												"src": "972:11:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 39,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "972:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 42,
+												"indexed": false,
+												"mutability": "mutable",
+												"name": "time",
+												"nameLocation": "990:4:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 44,
+												"src": "985:9:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 41,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "985:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "934:61:0"
+									},
+									"src": "919:77:0"
+								}
+							],
+							"scope": 46,
+							"src": "743:258:0",
+							"usedErrors": []
+						}
+					],
+					"src": "40:965:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

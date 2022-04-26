@@ -1,0 +1,458 @@
+{
+	"id": "cce06894653b037f1d82e398ce9b0c48",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.7",
+	"solcLongVersion": "0.8.7+commit.e28d00a7",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"Project/FeedBackLib.sol": {
+				"content": "// SPDX-License-Identifier: UNLICENSED\r\npragma solidity ^0.8.0;\r\n\r\ncontract Errors {\r\n\r\n    /// Can't add a product that already exists\r\n    error ProductExists();\r\n\r\n    error ProductNotExistent();\r\n\r\n    /// Error trown when the productID doesn't exist or it has been bought once already\r\n    error ItemIdWrongOrBoughtAlready();\r\n\r\n    /// Error trown when money sent is less than Product price\r\n    error LessThanPriceOrOutOfStock();\r\n\r\n\r\n    error TransactionNotExistent();\r\n}\r\n\r\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"contracts": {
+			"Project/FeedBackLib.sol": {
+				"Errors": {
+					"abi": [
+						{
+							"inputs": [],
+							"name": "ItemIdWrongOrBoughtAlready",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "LessThanPriceOrOutOfStock",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "ProductExists",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "ProductNotExistent",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "TransactionNotExistent",
+							"type": "error"
+						}
+					],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"Project/FeedBackLib.sol\":67:480  contract Errors {\r... */\n  mstore(0x40, 0x80)\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  0x00\n  dup1\n  revert\ntag_1:\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"Project/FeedBackLib.sol\":67:480  contract Errors {\r... */\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa26469706673582212202ea48bc8dc581bbe5f826edd6e403457570d558a24d6e817c22d5befbde3e09c64736f6c63430008070033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212202ea48bc8dc581bbe5f826edd6e403457570d558a24d6e817c22d5befbde3e09c64736f6c63430008070033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x2E LOG4 DUP12 0xC8 0xDC PC SHL 0xBE 0x5F DUP3 PUSH15 0xDD6E403457570D558A24D6E817C22D JUMPDEST 0xEF 0xBD 0xE3 0xE0 SWAP13 PUSH5 0x736F6C6343 STOP ADDMOD SMOD STOP CALLER ",
+							"sourceMap": "67:413:0:-:0;;;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "6080604052600080fdfea26469706673582212202ea48bc8dc581bbe5f826edd6e403457570d558a24d6e817c22d5befbde3e09c64736f6c63430008070033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x2E LOG4 DUP12 0xC8 0xDC PC SHL 0xBE 0x5F DUP3 PUSH15 0xDD6E403457570D558A24D6E817C22D JUMPDEST 0xEF 0xBD 0xE3 0xE0 SWAP13 PUSH5 0x736F6C6343 STOP ADDMOD SMOD STOP CALLER ",
+							"sourceMap": "67:413:0:-:0;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "12600",
+								"executionCost": "66",
+								"totalCost": "12666"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "PUSH",
+									"source": 0,
+									"value": "80"
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "PUSH",
+									"source": 0,
+									"value": "40"
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "CALLVALUE",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "ISZERO",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "POP",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 67,
+									"end": 480,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a26469706673582212202ea48bc8dc581bbe5f826edd6e403457570d558a24d6e817c22d5befbde3e09c64736f6c63430008070033",
+									".code": [
+										{
+											"begin": 67,
+											"end": 480,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 67,
+											"end": 480,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 67,
+											"end": 480,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 67,
+											"end": 480,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 67,
+											"end": 480,
+											"name": "DUP1",
+											"source": 0
+										},
+										{
+											"begin": 67,
+											"end": 480,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							}
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ItemIdWrongOrBoughtAlready\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LessThanPriceOrOutOfStock\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ProductExists\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ProductNotExistent\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TransactionNotExistent\",\"type\":\"error\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"errors\":{\"ItemIdWrongOrBoughtAlready()\":[{\"notice\":\"Error trown when the productID doesn't exist or it has been bought once already\"}],\"LessThanPriceOrOutOfStock()\":[{\"notice\":\"Error trown when money sent is less than Product price\"}],\"ProductExists()\":[{\"notice\":\"Can't add a product that already exists\"}]},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"Project/FeedBackLib.sol\":\"Errors\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"Project/FeedBackLib.sol\":{\"keccak256\":\"0x400d1b35f035897fd309f49e9e16865d5d46f557da6ce5cf5326c310554a35e6\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://e87a5e49db5a6df3ad451c37b87b476dfb15a6a08fa60bc1aa05ad4123284fa8\",\"dweb:/ipfs/QmWpThiuwaknJAxcFBwpdAAtTn5zmXozsMPMdSWFPZcbGU\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"errors": {
+							"ItemIdWrongOrBoughtAlready()": [
+								{
+									"notice": "Error trown when the productID doesn't exist or it has been bought once already"
+								}
+							],
+							"LessThanPriceOrOutOfStock()": [
+								{
+									"notice": "Error trown when money sent is less than Product price"
+								}
+							],
+							"ProductExists()": [
+								{
+									"notice": "Can't add a product that already exists"
+								}
+							]
+						},
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"Project/FeedBackLib.sol": {
+				"ast": {
+					"absolutePath": "Project/FeedBackLib.sol",
+					"exportedSymbols": {
+						"Errors": [
+							15
+						]
+					},
+					"id": 16,
+					"license": "UNLICENSED",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "40:23:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "contract",
+							"fullyImplemented": true,
+							"id": 15,
+							"linearizedBaseContracts": [
+								15
+							],
+							"name": "Errors",
+							"nameLocation": "76:6:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"documentation": {
+										"id": 2,
+										"nodeType": "StructuredDocumentation",
+										"src": "92:43:0",
+										"text": "Can't add a product that already exists"
+									},
+									"id": 4,
+									"name": "ProductExists",
+									"nameLocation": "147:13:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 3,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "160:2:0"
+									},
+									"src": "141:22:0"
+								},
+								{
+									"id": 6,
+									"name": "ProductNotExistent",
+									"nameLocation": "177:18:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 5,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "195:2:0"
+									},
+									"src": "171:27:0"
+								},
+								{
+									"documentation": {
+										"id": 7,
+										"nodeType": "StructuredDocumentation",
+										"src": "206:83:0",
+										"text": "Error trown when the productID doesn't exist or it has been bought once already"
+									},
+									"id": 9,
+									"name": "ItemIdWrongOrBoughtAlready",
+									"nameLocation": "301:26:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 8,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "327:2:0"
+									},
+									"src": "295:35:0"
+								},
+								{
+									"documentation": {
+										"id": 10,
+										"nodeType": "StructuredDocumentation",
+										"src": "338:58:0",
+										"text": "Error trown when money sent is less than Product price"
+									},
+									"id": 12,
+									"name": "LessThanPriceOrOutOfStock",
+									"nameLocation": "408:25:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 11,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "433:2:0"
+									},
+									"src": "402:34:0"
+								},
+								{
+									"id": 14,
+									"name": "TransactionNotExistent",
+									"nameLocation": "452:22:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 13,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "474:2:0"
+									},
+									"src": "446:31:0"
+								}
+							],
+							"scope": 16,
+							"src": "67:413:0",
+							"usedErrors": [
+								4,
+								6,
+								9,
+								12,
+								14
+							]
+						}
+					],
+					"src": "40:444:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

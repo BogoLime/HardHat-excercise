@@ -1,0 +1,57 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "ProductExists",
+				"type": "error"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"errors": {
+				"ProductExists()": [
+					{
+						"notice": "Can't add a product that already exists"
+					}
+				]
+			},
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Project/error.sol": "FeedBackLib"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Project/error.sol": {
+			"keccak256": "0x9b76a4b0b1c928bafa84815073bf211ef8137b1d0be21fafd279debedc07d058",
+			"urls": [
+				"bzz-raw://a53b349c28fbcce20cb0f96a22970f26fabd25190fd5a4fd7b359ef3abb86d3f",
+				"dweb:/ipfs/QmdCn4qWGhaQavejKnhQTgP8xZC4cHymPjeiDm7qY87s9Q"
+			]
+		}
+	},
+	"version": 1
+}

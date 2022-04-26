@@ -1,0 +1,138 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "Blocks100Exceeded",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ItemIdWrongOrBoughtAlready",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "LessThanPriceOrOutOfStock",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NotAnAdmin",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NotAnEOA",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NothingToRefund",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ProductExists",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ProductNotExistent",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "TransactionNotExistent",
+				"type": "error"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"errors": {
+				"Blocks100Exceeded()": [
+					{
+						"notice": "More than 100 blocks have passed since the product has been bought"
+					}
+				],
+				"ItemIdWrongOrBoughtAlready()": [
+					{
+						"notice": "ProductID doesn't exist or it has been bought once already by this address"
+					}
+				],
+				"LessThanPriceOrOutOfStock()": [
+					{
+						"notice": "Money sent is less than Product price or Product out of Stock"
+					}
+				],
+				"NotAnAdmin()": [
+					{
+						"notice": "This address is not an admin"
+					}
+				],
+				"NotAnEOA()": [
+					{
+						"notice": "This address of the owner must belong to an EOA, not a smart contract"
+					}
+				],
+				"NothingToRefund()": [
+					{
+						"notice": "No products returned or Buyer already refunded"
+					}
+				],
+				"ProductExists()": [
+					{
+						"notice": "Can't add a product that already exists"
+					}
+				],
+				"ProductNotExistent()": [
+					{
+						"notice": "Product doesn't exist"
+					}
+				],
+				"TransactionNotExistent()": [
+					{
+						"notice": "Transaction doesn't exist"
+					}
+				]
+			},
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Project/Library.sol": "Errors"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Project/Library.sol": {
+			"keccak256": "0x306f8a1efaaf2add7d89806512f965bf3a281b9f810bbe5903f0aa4060c14eee",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://93718515ecfb6d3dd7e570ba87933cd927c419791dc641d55244c755f88e9c2e",
+				"dweb:/ipfs/QmeBM9TMPfeAHAgh9xkuApKJUKfT58XmA1xkrNiCUMyL9F"
+			]
+		}
+	},
+	"version": 1
+}

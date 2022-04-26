@@ -15,7 +15,8 @@ I tried to structure the code into logically contained parts, so that it has a s
 
 ### Contract Interface
 
-```interface IERC20 {
+```
+interface IERC20 {
     function addNewProduct(string calldata _name, uint _price,uint _quantity) external isOwner;
     function addQuantity(uint _id,uint _quantity) external isOwner;
     function showAvailableProducts() external view returns (string[] memory);

@@ -33,7 +33,7 @@ I tried to structure the code into logically contained parts, so that it has a s
 - Since the mapping is not iterable, storing the product names in an array allows the clients to quickly see all of them and then refrence them trough their index(id). This again consumes more storage space initially, but saves on extra for loops, which in the long run should be more efficient.
 
 ### Buyers should be able to return products if they are not satisfied (within a certain period in blocktime: 100 blocks).
-- return is done by calling the returnProduct() function.
+- returning Products is done by calling the returnProduct() function.
 - Every successfull call to  buyProduct() creates a new Transaction that stores the amount, the blockNumber and also the status as number / 0 - doesn't exist, 1- paid, 2- refunded/. Those statuses are used to check and prevent buyers from purchasing the same product or returning it a second time.
 - Substracting the current block time from the purchase block time, to check if 100 blocks have passed.
 - Returning a product means that the buyer must be refunded. After doing a research, I came to the conclusion that it is a better and more secure practice to create a separate function, that the user must call explicitly to get his money back. A state variable called pendingWithdrawals keeps track of the money that has to be returned to the buyer. If a return is successful, those money get added in pendingWithdrawals for that account(buyer).
@@ -46,7 +46,7 @@ I tried to structure the code into logically contained parts, so that it has a s
 - every product has a quantity attribute which gets updated. Calling  buyProduct() always checks to see if quantity is above 0.
 
 ### Everyone should be able to see the addresses of all clients that have ever bought a given product.
-- At first I created a state variable mapping that stores all addresses that have purchased a product. This was easier to implement, but not very efficient and costly - since storing data in contract storage is one of the most expensive things. The array of buyers could grow indeffinately, which is why I changed my approach and decided to use Events as a way to log every Transaction. This way they can get "queried" later by their indexed parameters. So I switched from storing in storage to loging as Events - which allows me to get all the historiacal data of all buyers of a product in a more gas-efficient way.
+- At first I created a state variable mapping that stores all addresses that have purchased a product. This was easier to implement, but not very efficient and costly - since storing data in contract storage is one of the most expensive things. The array of buyers could grow indeffinately, which is why I changed my approach and decided to use Events as a way to log every Transaction. This way they can get "queried" later by their indexed parameters. So I switched from storing in storage to loging as Events - which allows me to get all the historical data of all buyers of a product in a more gas-efficient way.
 - **I've included a simple example with web3.js in Node.js** that shows how this approach might work.
 
 ## How I tried to decrease gas-costs
@@ -59,5 +59,5 @@ I tried to structure the code into logically contained parts, so that it has a s
 - using calldata when possible
 
 ## NOTES
-- I have deployed the contract to Ropsten testnet to test it. I also used a node on Infura to connect to the network with web3.js and try some of the functionality.
+- I have deployed the contract to **Ropsten testnet to test it**. I also used a **node on Infura** to connect to the network with web3.js and try some of the functionality.
 - Reverting with Custom Errors in Remix IDE worked great. But I didn't know that errors are not actually being returned on the testnet. So this is probably something that I can improve upon in the contracts. Using a try/catch block to catch the errors and then emit an Event that will log what happened and thus give a better explanation of why a transaction failed.

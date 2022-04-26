@@ -13,7 +13,7 @@ I tried to structure the code into logically contained parts, so that it has a s
 ### TechnoLime.sol
  - contract TechnoLimeStore - this is the main contract (that actually gets deployed) - it inherits from all the above contracts. It also defines the functions for buying and returning a product. Since these functions modify state variables from both Products & Transactions contracts, they are defined here.
 
-### Contract Interface
+## Contract Interface
 
 ```
 interface TechnoLimeStore {

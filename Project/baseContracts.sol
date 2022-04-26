@@ -39,7 +39,7 @@ contract Products is Ownable {
 
     // Using the iterable mapping technique
     // Checking available products - and their id (the index in the array)
-    string[] public availableProducts;
+    string[] availableProducts;
     mapping(uint => Product) public products;
 
     // 0(1) lookup time when checking if a product already exists before adding it to store
@@ -71,6 +71,11 @@ contract Products is Ownable {
             //  Using descriptive custom error name instead of string description - to save a bit of gas;
             revert Errors.ProductNotExistent();
         }
+    }
+    
+
+    function showAvailableProducts() external view returns (string[] memory){
+        return availableProducts;
     }
 
 }

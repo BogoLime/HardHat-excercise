@@ -20,7 +20,7 @@ interface TechnoLimeStore {
     function addNewProduct(string calldata _name, uint _price,uint _quantity) external isOwner;
     function addQuantity(uint _id,uint _quantity) external isOwner;
     function showAvailableProducts() external view returns (string[] memory);
-    function products(uint _id) external view returns (Product memory);
+    function products(uint _id) public view returns (Product memory);
     function buyProduct(uint _id) external payable;
     function returnProduct(uint _id) external;
     function withdraw() external;

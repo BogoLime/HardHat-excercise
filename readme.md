@@ -61,3 +61,20 @@ I tried to structure the code into logically contained parts, so that it has a s
 ## NOTES
 - I have deployed the contract to **Ropsten testnet to test it**. I also used a **node on Infura** to connect to the network with web3.js and try some of the functionality.
 - Reverting with Custom Errors in Remix IDE worked great. But I didn't know that errors are not actually being returned on the testnet. So this is probably something that I can improve upon in the contracts. Using a try/catch block to catch the errors and then emit an Event that will log what happened and thus give a better explanation of why a transaction failed.
+
+## SOURCES
+1. https://docs.soliditylang.org/en/v0.8.13/
+2. https://ethereum.org/en/developers/docs/
+3. https://consensys.github.io/smart-contract-best-practices/general-philosophy/simplicity/
+4. https://cryptomarketpool.com/
+4. https://hackernoon.com/hack-solidity-reentrancy-attack
+5. https://medium.com/coinmonks/optimizing-your-solidity-contracts-gas-usage-9d65334db6c7
+6. https://moralis.io/how-to-reduce-solidity-gas-costs-full-guide/
+7. https://medium.com/the-capital/how-much-does-it-cost-to-deploy-a-smart-contract-on-ethereum-11bcd64da1
+8. https://ethdocs.org/en/latest/contracts-and-transactions/account-types-gas-and-transactions.html
+9. https://docs.soliditylang.org/en/v0.8.11/security-considerations.html?highlight=security
+10. https://eip2535diamonds.substack.com/p/how-eip2535-diamonds-reduces-gas?s=r
+11. https://blockheroes.dev/import-external-contracts-libraries/
+12. https://ethereum.stackexchange.com/questions/66382/switching-from-storage-to-memory-increases-the-gas-cost
+13. https://jeancvllr.medium.com/solidity-tutorial-all-about-libraries-762e5a3692f9
+14. Different discussions on Stack Exchange and Stack Overflow and many more articles and blog posts from Medium, CryptoMarketPool and HackerNoon primarily.

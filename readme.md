@@ -13,6 +13,21 @@ I tried to structure the code into logically contained parts, so that it has a s
 ### TechnoLime.sol
  - contract TechnoLimeStore - this is the main contract (that actually gets deployed) - it inherits from all the above contracts. It also defines the functions for buying and returning a product. Since these functions modify state variables from both Products & Transactions contracts, they are defined here.
 
+### Contract Interface
+
+`interface IERC20 {
+    function addNewProduct(string calldata _name, uint _price,uint _quantity) external isOwner;
+    function addQuantity(uint _id,uint _quantity) external isOwner;
+    function showAvailableProducts() external view returns (string[] memory);
+    function products(uint _id) external view returns (Product memory);
+    function buyProduct(uint _id) external payable;
+    function returnProduct(uint _id) external;
+    function withdraw() external;
+    event NewTransaction(uint indexed productId,address indexed buyer,uint amount, uint time);
+    event NewReturn(address indexed buyer,uint productId,uint amount, uint time);
+    event NewRefund(address indexed buyer,uint amount, uint time);
+}
+`
 
 ## How I solved the task requirements
 

@@ -98,7 +98,7 @@ contract Transactions {
 
      // Following the best practices and creating a separate function for ether withdrawal 
     // instead of doing it automatically when a buyer returns a product
-    function withdraw() public {
+    function withdraw() external {
         if (pendingWithdrawals[msg.sender] > 0){
             // Following the Checks-Effects-Interactions Pattern - to prevent from Re-entrancy Attack and multiple Refunding
             uint amount = pendingWithdrawals[msg.sender];

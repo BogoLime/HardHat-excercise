@@ -1,7 +1,7 @@
 
 
 ## How I structured the contract
-I tried to structure the code into logically contained parts, so that it has a structure that is easier to understand and to maintain.
+I organized the code into logically contained parts, so that it has a structure that is easier to understand and to maintain.
 - I have created two libraries with all the Error and Event types.
 - I have encapsulated logically related state variables and functions in separate contracts ( baseContracts.sol ), that then get inherited in the main contract ( TechnoLime.sol ).
 
